@@ -20,7 +20,7 @@ Then, to parse an environment variable, call the `processEnv` function and provi
 var port = processEnv('PORT');
 ```
 
-If the environment variable is not set, `parseEnv` returns `undefined`. Hence, if you want to provide a default value, use the usual JavaScript `||` operator.
+If the environment variable is not set, `processEnv` returns `undefined`. Hence, if you want to provide a default value, use the usual JavaScript `||` operator.
 
 ```javascript
 var port = processEnv('PORT') || 3000;
