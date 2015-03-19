@@ -1,0 +1,34 @@
+{
+  "name": "processenv",
+  "version": "0.0.0",
+  "description": "processenv parses environment variables.",
+  "contributors": [
+    {
+      "name": "Golo Roden",
+      "email": "golo.roden@thenativeweb.io"
+    },
+    {
+      "name": "Matthias Wagler",
+      "email": "matthias.wagler@thenativeweb.io"
+    }
+  ],
+  "main": "lib/processEnv.js",
+  "dependencies": {},
+  "devDependencies": {
+    "assertthat": "0.5.3",
+    "grunt": "0.4.5",
+    "nodeenv": "0.2.1",
+    "tourism": "0.16.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thenativeweb/processenv.git"
+  },
+  "keywords": [
+    "env",
+    "environment",
+    "parser",
+    "process"
+  ],
+  "license": "MIT"
+}
