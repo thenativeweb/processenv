@@ -15,10 +15,10 @@
   "main": "lib/processEnv.js",
   "dependencies": {},
   "devDependencies": {
-    "assertthat": "0.5.3",
-    "grunt": "0.4.5",
+    "assertthat": "0.7.2",
     "nodeenv": "0.2.1",
-    "tourism": "0.16.1"
+    "roboter": "0.11.6",
+    "uuidv4": "0.3.1"
   },
   "repository": {
     "type": "git",
