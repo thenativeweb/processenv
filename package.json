@@ -15,9 +15,9 @@
   "main": "lib/processEnv.js",
   "dependencies": {},
   "devDependencies": {
-    "assertthat": "0.7.2",
+    "assertthat": "0.8.0",
     "nodeenv": "0.2.1",
-    "roboter": "0.11.6",
+    "roboter": "0.11.14",
     "uuidv4": "0.3.1"
   },
   "repository": {
