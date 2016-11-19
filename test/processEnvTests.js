@@ -18,6 +18,17 @@ suite('processEnv', () => {
     done();
   });
 
+  test('returns all existing environment variables if no key is given.', done => {
+    nodeenv(key, 'foobar', restore => {
+      const environmentVariables = processEnv();
+
+      assert.that(environmentVariables).is.ofType('object');
+      assert.that(environmentVariables[key]).is.equalTo('foobar');
+      restore();
+      done();
+    });
+  });
+
   test('returns undefined for a non-existing environment variable.', done => {
     assert.that(processEnv(key)).is.undefined();
     done();

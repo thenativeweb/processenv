@@ -30,12 +30,18 @@ const port = processenv('PORT') || 3000;
 
 Please note that the value is automatically converted to the appropriate data type, e.g. a `number`. This also works for stringified JSON objects, in case you want to store complex configuration data inside an environment variable.
 
+If you want to get all environment variables at once, omit the name and simply call `processenv`. The values will all be parsed, but you can not specify default values.
+
+```javascript
+const environmentVariables = processenv();
+```
+
 ## Running the build
 
 To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
 ```bash
-$ bot build-server
+$ bot
 ```
 
 ## License
