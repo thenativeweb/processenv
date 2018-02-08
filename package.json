@@ -12,7 +12,7 @@
       "email": "matthias.wagler@thenativeweb.io"
     }
   ],
-  "main": "lib/processEnv.js",
+  "main": "dist/processEnv.js",
   "dependencies": {},
   "devDependencies": {
     "assertthat": "1.0.0",
