@@ -15,11 +15,11 @@
   "main": "lib/processEnv.js",
   "dependencies": {},
   "devDependencies": {
-    "assertthat": "0.8.2",
-    "nodeenv": "0.2.1",
-    "roboter": "0.13.10",
-    "roboter-server": "0.13.10",
-    "uuidv4": "0.4.0"
+    "assertthat": "1.0.0",
+    "nodeenv": "1.0.0",
+    "roboter": "0.15.6",
+    "roboter-server": "0.15.6",
+    "uuidv4": "1.0.0"
   },
   "repository": {
     "type": "git",

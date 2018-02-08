@@ -4,7 +4,7 @@ const assert = require('assertthat'),
       nodeenv = require('nodeenv'),
       uuid = require('uuidv4');
 
-const processEnv = require('../lib/processEnv');
+const processEnv = require('../../lib/processEnv');
 
 suite('processEnv', () => {
   let key;
@@ -19,14 +19,14 @@ suite('processEnv', () => {
   });
 
   test('returns all existing environment variables if no key is given.', done => {
-    nodeenv(key, 'foobar', restore => {
-      const environmentVariables = processEnv();
+    const restore = nodeenv(key, 'foobar');
+    const environmentVariables = processEnv();
 
-      assert.that(environmentVariables).is.ofType('object');
-      assert.that(environmentVariables[key]).is.equalTo('foobar');
-      restore();
-      done();
-    });
+    assert.that(environmentVariables).is.ofType('object');
+    assert.that(environmentVariables[key]).is.equalTo('foobar');
+
+    restore();
+    done();
   });
 
   test('returns undefined for a non-existing environment variable.', done => {
@@ -35,50 +35,50 @@ suite('processEnv', () => {
   });
 
   test('returns the value for an existing environment variable.', done => {
-    nodeenv(key, 'foobar', restore => {
-      assert.that(processEnv(key)).is.equalTo('foobar');
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, 'foobar');
+
+    assert.that(processEnv(key)).is.equalTo('foobar');
+    restore();
+    done();
   });
 
   test('returns the value for an existing environment variable of type number.', done => {
-    nodeenv(key, '23', restore => {
-      assert.that(processEnv(key)).is.equalTo(23);
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, '23');
+
+    assert.that(processEnv(key)).is.equalTo(23);
+    restore();
+    done();
   });
 
   test('returns the parsed value for an existing environment variable that contains a JSON object.', done => {
-    nodeenv(key, '{"foo": "bar"}', restore => {
-      assert.that(processEnv(key)).is.equalTo({ foo: 'bar' });
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, '{"foo": "bar"}');
+
+    assert.that(processEnv(key)).is.equalTo({ foo: 'bar' });
+    restore();
+    done();
   });
 
   test('returns the value for an existing environment variable that contains a malformed JSON object.', done => {
-    nodeenv(key, '{"foo": "bar"', restore => {
-      assert.that(processEnv(key)).is.equalTo('{"foo": "bar"');
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, '{"foo": "bar"');
+
+    assert.that(processEnv(key)).is.equalTo('{"foo": "bar"');
+    restore();
+    done();
   });
 
   test('returns the parsed value for an existing environment variable that contains a JSON array.', done => {
-    nodeenv(key, '["foo", "bar"]', restore => {
-      assert.that(processEnv(key)).is.equalTo([ 'foo', 'bar' ]);
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, '["foo", "bar"]');
+
+    assert.that(processEnv(key)).is.equalTo([ 'foo', 'bar' ]);
+    restore();
+    done();
   });
 
   test('returns the value for an existing environment variable that contains a malformed JSON array.', done => {
-    nodeenv(key, '["foo", "bar"', restore => {
-      assert.that(processEnv(key)).is.equalTo('["foo", "bar"');
-      restore();
-      done();
-    });
+    const restore = nodeenv(key, '["foo", "bar"');
+
+    assert.that(processEnv(key)).is.equalTo('["foo", "bar"');
+    restore();
+    done();
   });
 });
