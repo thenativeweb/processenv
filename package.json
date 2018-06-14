@@ -1,6 +1,6 @@
 {
   "name": "processenv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "processenv parses environment variables.",
   "contributors": [
     {
