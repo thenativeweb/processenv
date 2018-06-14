@@ -17,9 +17,8 @@
   "devDependencies": {
     "assertthat": "1.0.0",
     "nodeenv": "1.0.0",
-    "roboter": "0.15.6",
-    "roboter-server": "0.15.6",
-    "uuidv4": "1.0.0"
+    "roboter": "1.0.4",
+    "uuidv4": "1.0.1"
   },
   "repository": {
     "type": "git",
