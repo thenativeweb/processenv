@@ -1,6 +1,6 @@
 {
   "name": "processenv",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "processenv parses environment variables.",
   "contributors": [
     {
@@ -10,6 +10,10 @@
     {
       "name": "Matthias Wagler",
       "email": "matthias.wagler@thenativeweb.io"
+    },
+    {
+      "name": "Peter Winter",
+      "email": "peter@pwntr.com"
     }
   ],
   "main": "dist/processEnv.js",
