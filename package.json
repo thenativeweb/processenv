@@ -10,10 +10,16 @@
     {
       "name": "Matthias Wagler",
       "email": "matthias.wagler@thenativeweb.io"
+    },
+    {
+      "name": "Peter Winter",
+      "email": "peter@pwntr.com"
     }
   ],
   "main": "dist/processEnv.js",
-  "dependencies": {},
+  "dependencies": {
+    "babel-runtime": "6.26.0"
+  },
   "devDependencies": {
     "assertthat": "1.0.0",
     "nodeenv": "1.0.0",
