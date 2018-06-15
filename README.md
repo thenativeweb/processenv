@@ -22,7 +22,14 @@ Then, to parse an environment variable, call the `processenv` function and provi
 const port = processenv('PORT');
 ```
 
-If the environment variable is not set, `processenv` returns `undefined`. Hence, if you want to provide a default value, use the usual JavaScript `||` operator.
+If you want to provide a default value, you can add it as a second parameter. This also works for booleans and all other types. If neither the environment variable nor the desired default value are set, `processenv` returns `undefined`.
+
+```javascript
+const port = processenv('PORT', 3000);
+const dryrun = processenv('DRYRUN', true);
+```
+
+The usual JavaScript `||` operator works as well for providing default values, just not for all constellations of booleans. For instance, reading a boolean environment variable that is set to `false`, with a desired default if unset of `true`, still yields `true` in all cases. If you use booleans, use the above syntax with a second parameter instead.
 
 ```javascript
 const port = processenv('PORT') || 3000;
