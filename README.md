@@ -26,13 +26,19 @@ If you want to provide a default value, you can add it as a second parameter. Th
 
 ```javascript
 const port = processenv('PORT', 3000);
+const user = processenv('USER', 'Hans');
 const dryrun = processenv('DRYRUN', true);
 ```
 
 The usual JavaScript `||` operator works as well for providing default values, just not for all constellations of booleans. For instance, reading a boolean environment variable that is set to `false`, with a desired default if unset of `true`, still yields `true` in all cases. If you use booleans, use the above syntax with a second parameter instead.
 
 ```javascript
+// works fine:
 const port = processenv('PORT') || 3000;
+const user = processenv('USER') || 'Hans';
+
+// doesn't work if environment variable 'DRYRUN' contains 'false':
+const port = processenv('DRYRUN') || true; // will always return true
 ```
 
 Please note that the value is automatically converted to the appropriate data type, e.g. a `number`. This also works for stringified JSON objects, in case you want to store complex configuration data inside an environment variable.

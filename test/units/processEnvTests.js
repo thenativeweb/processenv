@@ -31,6 +31,32 @@ suite('processEnv', () => {
     assert.that(processEnv(key)).is.undefined();
   });
 
+  test('returns default value for a non-existing environment variable if set as parameter.', async () => {
+    assert.that(processEnv(key, 'foobar')).is.equalTo('foobar');
+  });
+
+  test('returns default value for a non-existing environment variable if used with || syntax.', async () => {
+    assert.that(processEnv(key) || 'foobar').is.equalTo('foobar');
+  });
+
+  test('returns default value (number) for a non-existing environment variable if set as parameter.', async () => {
+    assert.that(processEnv(key, 23)).is.equalTo(23);
+  });
+
+  test('returns default value (number) for a non-existing environment variable if used with || syntax.', async () => {
+    assert.that(processEnv(key) || 23).is.equalTo(23);
+  });
+
+  test('returns default value (boolean) for a non-existing environment variable if set as parameter.', async () => {
+    assert.that(processEnv(key, false)).is.false();
+    assert.that(processEnv(key, true)).is.true();
+  });
+
+  test('returns default value (boolean) for a non-existing environment variable if used with || syntax.', async () => {
+    assert.that(processEnv(key) || false).is.false();
+    assert.that(processEnv(key) || true).is.true();
+  });
+
   test('returns the value for an existing environment variable.', async () => {
     const restore = nodeenv(key, 'foobar');
 
@@ -42,6 +68,30 @@ suite('processEnv', () => {
     const restore = nodeenv(key, '23');
 
     assert.that(processEnv(key)).is.equalTo(23);
+    restore();
+  });
+
+  test('returns the value for an existing environment variable of type boolean.', async () => {
+    const restore = nodeenv(key, 'false');
+
+    assert.that(processEnv(key)).is.false();
+    restore();
+  });
+
+  // this is why the second parameter to provide the default value was needed
+  test('returns the value for an existing environment variable of type boolean when a default is passed as a parameter.', async () => {
+    const restore = nodeenv(key, 'false');
+
+    assert.that(processEnv(key, true)).is.false();
+    restore();
+  });
+
+  // this is where || syntax for default value assigning is of limited use
+  test('BREAKING: doesn\'t return the correct value for an existing environment variable of type boolean when a default is assigned via || syntax.', async () => {
+    const restore = nodeenv(key, 'false');
+
+    // processEnv(key) || true; always returns true when the value contained in key is set to false
+    assert.that(processEnv(key) || true).is.not.false();
     restore();
   });
 
