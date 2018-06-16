@@ -8,7 +8,7 @@ const normalize = function (value) {
   }
 };
 
-const processEnv = function (key, alt = undefined) {
+const processEnv = function (key, defaultValue = undefined) {
   if (!key) {
     const environmentVariables = {};
 
@@ -25,10 +25,10 @@ const processEnv = function (key, alt = undefined) {
   const value = process.env[key];
   /* eslint-enable no-process-env */
 
-  if (value === undefined && alt !== undefined) {
-    return alt;
+  if (value === undefined && defaultValue !== undefined) {
+    return defaultValue;
   }
-  if (value === undefined && alt === undefined) {
+  if (value === undefined && defaultValue === undefined) {
     return undefined;
   }
 

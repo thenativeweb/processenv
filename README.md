@@ -10,38 +10,44 @@ $ npm install processenv
 
 ## Quick start
 
-First you need to integrate processenv into your application.
+First you need to integrate processenv into your application:
 
 ```javascript
 const processenv = require('processenv');
 ```
 
-Then, to parse an environment variable, call the `processenv` function and provide the name of the environment variable you would like to parse.
+Then, to parse an environment variable, call the `processenv` function and provide the name of the environment variable you would like to parse:
 
 ```javascript
 const port = processenv('PORT');
 ```
 
-If you want to provide a default value, you can add it as a second parameter. This also works for booleans and all other types. If neither the environment variable nor the desired default value are set, `processenv` returns `undefined`.
+Please note that the value is automatically converted to the appropriate data type, e.g. a `number`. This also works for stringified JSON objects, in case you want to store complex configuration data inside an environment variable.
+
+### Using default values
+
+If you want to provide a default value, you may add it as a second parameter. This also works for booleans and all other types. If neither the environment variable nor the desired default value are set, `processenv` returns `undefined`:
 
 ```javascript
 const port = processenv('PORT', 3000);
-const user = processenv('USER', 'Hans');
-const dryrun = processenv('DRYRUN', true);
+const user = processenv('USER', 'Jane Doe');
+const isRoot = processenv('ROOT', true);
 ```
 
-The usual JavaScript `||` operator works as well for providing default values, just not for all constellations of booleans. For instance, reading a boolean environment variable that is set to `false`, with a desired default if unset of `true`, still yields `true` in all cases. If you use booleans, use the above syntax with a second parameter instead.
+#### Using the `||` operator
+
+Instead of providing a second parameter, you may use the `||` operator to handle default values. However, this may lead to problems with boolean values, e.g. if you want to use a default value of `true`:
 
 ```javascript
-// works fine:
-const port = processenv('PORT') || 3000;
-const user = processenv('USER') || 'Hans';
-
-// doesn't work if environment variable 'DRYRUN' contains 'false':
-const port = processenv('DRYRUN') || true; // will always return true
+// This will always evaluate to true, no matter whether ROOT is false or true.
+const isRoot = processenv('ROOT') || true;
 ```
 
-Please note that the value is automatically converted to the appropriate data type, e.g. a `number`. This also works for stringified JSON objects, in case you want to store complex configuration data inside an environment variable.
+The underlying problem here is that when a value of `false` is given for the environment variable, the `||` operator automatically falls back to the `true` keyword, hence the result will always be `true`.
+
+To avoid this problem, always use the previously shown syntax using a second parameter to provide default values.
+
+### Getting all environment variables
 
 If you want to get all environment variables at once, omit the name and simply call `processenv`. The values will all be parsed, but you can not specify default values.
 
