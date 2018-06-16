@@ -14,7 +14,9 @@ var normalize = function normalize(value) {
   }
 };
 
-var processEnv = function processEnv(key, alt = undefined) {
+var processEnv = function processEnv(key) {
+  var defaultValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : undefined;
+
   if (!key) {
     var environmentVariables = {};
 
@@ -31,10 +33,10 @@ var processEnv = function processEnv(key, alt = undefined) {
   var value = process.env[key];
   /* eslint-enable no-process-env */
 
-  if (value === undefined && alt !== undefined) {
-    return alt;
+  if (value === undefined && defaultValue !== undefined) {
+    return defaultValue;
   }
-  if (value === undefined && alt === undefined) {
+  if (value === undefined && defaultValue === undefined) {
     return undefined;
   }
 
