@@ -25,11 +25,8 @@ const processEnv = function (key, defaultValue = undefined) {
   const value = process.env[key];
   /* eslint-enable no-process-env */
 
-  if (value === undefined && defaultValue !== undefined) {
+  if (value === undefined) {
     return defaultValue;
-  }
-  if (value === undefined && defaultValue === undefined) {
-    return undefined;
   }
 
   return normalize(value);
