@@ -14,6 +14,10 @@
     {
       "name": "Peter Winter",
       "email": "peter@pwntr.com"
+    },
+    {
+      "name": "Hannes Leutloff",
+      "email": "hannes.leutloff@thenativeweb.io"
     }
   ],
   "main": "dist/processEnv.js",
