@@ -2,6 +2,16 @@
 
 processenv parses environment variables.
 
+## Status
+
+| Category         | Status                                                                                                                                   |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Version          | [![npm](https://img.shields.io/npm/v/processenv)](https://www.npmjs.com/package/processenv)                                                      |
+| Dependencies     | ![David](https://img.shields.io/david/thenativeweb/processenv)                                                                               |
+| Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/processenv)                                                                           |
+| Build            | [![CircleCI](https://img.shields.io/circleci/build/github/thenativeweb/processenv)](https://circleci.com/gh/thenativeweb/processenv/tree/master) |
+| License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/processenv)                                                                     |
+
 ## Installation
 
 ```shell
@@ -13,7 +23,13 @@ $ npm install processenv
 First you need to integrate processenv into your application:
 
 ```javascript
-const processenv = require('processenv');
+const processenv = require('processenv').default;
+```
+
+If you use TypeScript, use the following code instead:
+
+```typescript
+import processenv from 'processenv';
 ```
 
 Then, to parse an environment variable, call the `processenv` function and provide the name of the environment variable you would like to parse:
