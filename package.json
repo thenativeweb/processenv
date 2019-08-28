@@ -20,15 +20,14 @@
       "email": "hannes.leutloff@thenativeweb.io"
     }
   ],
-  "main": "dist/processEnv.js",
-  "dependencies": {
-    "babel-runtime": "6.26.0"
-  },
+  "main": "build/lib/processEnv.js",
+  "types": "build/lib/processEnv.d.ts",
+  "dependencies": {},
   "devDependencies": {
-    "assertthat": "1.0.0",
-    "nodeenv": "1.0.0",
-    "roboter": "1.0.5",
-    "uuidv4": "1.0.1"
+    "assertthat": "4.0.1",
+    "nodeenv": "2.0.0",
+    "roboter": "7.1.1",
+    "uuidv4": "5.0.0"
   },
   "repository": {
     "type": "git",
