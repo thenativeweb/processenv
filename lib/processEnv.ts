@@ -1,6 +1,6 @@
-'use strict';
+import { EnvironmentVariables } from 'nodeenv';
 
-const normalize = function (value) {
+const normalize = function (value: any): any {
   try {
     return JSON.parse(value);
   } catch (ex) {
@@ -8,12 +8,12 @@ const normalize = function (value) {
   }
 };
 
-const processEnv = function (key, defaultValue = undefined) {
+const processEnv = function (key?: string, defaultValue: any = undefined): EnvironmentVariables | any {
   if (!key) {
-    const environmentVariables = {};
+    const environmentVariables: EnvironmentVariables = {};
 
     /* eslint-disable no-process-env */
-    Object.keys(process.env).forEach(name => {
+    Object.keys(process.env).forEach((name: string): void => {
       environmentVariables[name] = normalize(process.env[name]);
     });
     /* eslint-enable no-process-env */
@@ -32,4 +32,4 @@ const processEnv = function (key, defaultValue = undefined) {
   return normalize(value);
 };
 
-module.exports = processEnv;
+export default processEnv;
