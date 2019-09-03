@@ -26,7 +26,7 @@
   "devDependencies": {
     "assertthat": "4.0.1",
     "nodeenv": "2.0.0",
-    "roboter": "7.1.4",
+    "roboter": "7.1.5",
     "uuidv4": "5.0.0"
   },
   "repository": {
