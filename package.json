@@ -27,7 +27,7 @@
     "assertthat": "4.0.2",
     "nodeenv": "2.0.1",
     "roboter": "7.1.5",
-    "uuidv4": "5.0.0"
+    "uuidv4": "5.0.1"
   },
   "repository": {
     "type": "git",
