@@ -1,6 +1,6 @@
 import assert from 'assertthat';
 import { nodeenv } from 'nodeenv';
-import processenv from '../../lib/processenv';
+import { processenv } from '../../lib/processenv';
 import uuid from 'uuidv4';
 
 suite('processenv', (): void => {
