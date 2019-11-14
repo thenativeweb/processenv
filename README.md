@@ -23,13 +23,13 @@ $ npm install processenv
 First you need to integrate processenv into your application:
 
 ```javascript
-const processenv = require('processenv').default;
+const { processenv } = require('processenv');
 ```
 
 If you use TypeScript, use the following code instead:
 
 ```typescript
-import processenv from 'processenv';
+import { processenv } from 'processenv';
 ```
 
 Then, to parse an environment variable, call the `processenv` function and provide the name of the environment variable you would like to parse:
@@ -48,6 +48,18 @@ If you want to provide a default value, you may add it as a second parameter. Th
 const port = processenv('PORT', 3000);
 const user = processenv('USER', 'Jane Doe');
 const isRoot = processenv('ROOT', true);
+```
+
+Alternatively, you may also provide a function which returns the default values. This is useful, e.g. if you want to lazily evaluate a value:
+
+```javascript
+const port = processenv('PORT', () => 3000);
+```
+
+If you want to use an asynchronous function, please note that you must `await` the call to `processenv`:
+
+```javascript
+const port = await processenv('PORT', async () => 3000);
 ```
 
 #### Using the `||` operator
