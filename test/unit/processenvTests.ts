@@ -6,7 +6,7 @@ import { uuid } from 'uuidv4';
 suite('processenv', (): void => {
   let key: string;
 
-  setup((): void => {
+  setup(async (): Promise<void> => {
     key = uuid();
   });
 
