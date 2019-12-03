@@ -27,6 +27,7 @@
     "assertthat": "5.1.0",
     "nodeenv": "3.0.0",
     "roboter": "10.0.0",
+    "semantic-release-configuration": "1.0.6",
     "uuidv4": "6.0.0"
   },
   "repository": {
