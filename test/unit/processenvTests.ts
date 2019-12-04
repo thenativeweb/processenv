@@ -32,16 +32,16 @@ suite('processenv', (): void => {
     assert.that(processenv(key, 'foobar')).is.equalTo('foobar');
   });
 
-  test('returns default value for a non-existing environment variable if used with || syntax.', async (): Promise<void> => {
-    assert.that(processenv(key) || 'foobar').is.equalTo('foobar');
+  test('returns default value for a non-existing environment variable if used with ?? syntax.', async (): Promise<void> => {
+    assert.that(processenv(key) ?? 'foobar').is.equalTo('foobar');
   });
 
   test('returns default value (number) for a non-existing environment variable if set as parameter.', async (): Promise<void> => {
     assert.that(processenv(key, 23)).is.equalTo(23);
   });
 
-  test('returns default value (number) for a non-existing environment variable if used with || syntax.', async (): Promise<void> => {
-    assert.that(processenv(key) || 23).is.equalTo(23);
+  test('returns default value (number) for a non-existing environment variable if used with ?? syntax.', async (): Promise<void> => {
+    assert.that(processenv(key) ?? 23).is.equalTo(23);
   });
 
   test('returns default value (boolean) for a non-existing environment variable if set as parameter.', async (): Promise<void> => {
@@ -49,9 +49,9 @@ suite('processenv', (): void => {
     assert.that(processenv(key, true)).is.true();
   });
 
-  test('returns default value (boolean) for a non-existing environment variable if used with || syntax.', async (): Promise<void> => {
-    assert.that(processenv(key) || false).is.false();
-    assert.that(processenv(key) || true).is.true();
+  test('returns default value (boolean) for a non-existing environment variable if used with ?? syntax.', async (): Promise<void> => {
+    assert.that(processenv(key) ?? false).is.false();
+    assert.that(processenv(key) ?? true).is.true();
   });
 
   test('returns default value if it is provided as a synchronous function.', async (): Promise<void> => {
@@ -90,10 +90,10 @@ suite('processenv', (): void => {
     restore();
   });
 
-  test('does not return the correct value for an existing environment variable of type boolean when a default is assigned via || syntax.', async (): Promise<void> => {
+  test('returns the value for an existing environment variable of type boolean when a default is assigned via ?? syntax.', async (): Promise<void> => {
     const restore = nodeenv(key, 'false');
 
-    assert.that(processenv(key) || true).is.not.false();
+    assert.that(processenv(key) ?? true).is.false();
     restore();
   });
 
