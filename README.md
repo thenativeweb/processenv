@@ -62,18 +62,15 @@ If you want to use an asynchronous function, please note that you must `await` t
 const port = await processenv('PORT', async () => 3000);
 ```
 
-#### Using the `||` operator
+#### Using the `??` operator
 
-Instead of providing a second parameter, you may use the `||` operator to handle default values. However, this may lead to problems with boolean values, e.g. if you want to use a default value of `true`:
+Instead of providing a second parameter, you may use the `??` operator to handle default values:
 
 ```javascript
-// This will always evaluate to true, no matter whether ROOT is false or true.
-const isRoot = processenv('ROOT') || true;
+const isRoot = processenv('ROOT') ?? true;
 ```
 
-The underlying problem here is that when a value of `false` is given for the environment variable, the `||` operator automatically falls back to the `true` keyword, hence the result will always be `true`.
-
-To avoid this problem, always use the previously shown syntax using a second parameter to provide default values.
+*Please note that this is only true if you are using the `??` operator. If you are using the old-style `||` operator instead, the previous line always returns `true`, no matter what the actual value of the `ROOT` environment variable is. To avoid this problem, either use the `??` operator or use the previously shown syntax using a second parameter to provide a default value.*
 
 ### Getting all environment variables
 
