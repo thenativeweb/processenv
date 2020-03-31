@@ -28,7 +28,7 @@
     "nodeenv": "3.0.0",
     "roboter": "11.1.17",
     "semantic-release-configuration": "1.0.19",
-    "uuidv4": "6.0.6"
+    "uuidv4": "6.0.7"
   },
   "repository": {
     "type": "git",
