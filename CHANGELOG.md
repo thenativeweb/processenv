@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/thenativeweb/processenv/compare/3.0.1...3.0.2) (2020-04-30)
+
+
+### Bug Fixes
+
+* bump uuidv4 from 6.0.7 to 6.0.8 ([#148](https://github.com/thenativeweb/processenv/issues/148)) ([2cc7c76](https://github.com/thenativeweb/processenv/commit/2cc7c7683ed7464f28a7c89715a721466095ac67))
+
 ## [3.0.1](https://github.com/thenativeweb/processenv/compare/3.0.0...3.0.1) (2019-12-04)
 
 
