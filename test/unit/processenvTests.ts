@@ -1,13 +1,13 @@
 import { assert } from 'assertthat';
 import { nodeenv } from 'nodeenv';
 import { processenv } from '../../lib/processenv';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 suite('processenv', (): void => {
   let key: string;
 
   setup(async (): Promise<void> => {
-    key = uuid();
+    key = v4();
   });
 
   test('is a function.', async (): Promise<void> => {
