@@ -24,7 +24,7 @@
   "types": "build/lib/processenv.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "@types/uuid": "8.0.0",
+    "@types/uuid": "8.0.1",
     "assertthat": "5.2.1",
     "nodeenv": "3.0.9",
     "roboter": "11.2.13",
