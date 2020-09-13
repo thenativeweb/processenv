@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/uuid": "8.3.0",
     "assertthat": "5.2.1",
-    "nodeenv": "3.0.15",
+    "nodeenv": "3.0.16",
     "roboter": "11.2.26",
     "semantic-release-configuration": "1.0.20",
     "uuid": "8.3.0"
