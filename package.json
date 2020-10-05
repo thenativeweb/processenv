@@ -29,7 +29,7 @@
     "nodeenv": "3.0.19",
     "roboter": "11.3.12",
     "semantic-release-configuration": "1.0.21",
-    "uuid": "8.3.0"
+    "uuid": "8.3.1"
   },
   "repository": {
     "type": "git",
