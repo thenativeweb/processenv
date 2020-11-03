@@ -80,9 +80,9 @@ If you want to get all environment variables at once, omit the name and simply c
 const environmentVariables = processenv();
 ```
 
-## Running the quality assurance
+## Running quality assurance
 
-To build this module use [roboter](https://www.npmjs.com/package/roboter).
+To run quality assurance for this module use [roboter](https://www.npmjs.com/package/roboter):
 
 ```shell
 $ npx roboter
