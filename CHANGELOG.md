@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/thenativeweb/processenv/compare/3.0.3...3.0.4) (2021-03-25)
+
+
+### Bug Fixes
+
+* Migrate from master to main. ([#346](https://github.com/thenativeweb/processenv/issues/346)) ([9f4377c](https://github.com/thenativeweb/processenv/commit/9f4377c0eb1da1e664a7e1de04dac1942106fe43))
+
 ## [3.0.3](https://github.com/thenativeweb/processenv/compare/3.0.2...3.0.3) (2020-11-03)
 
 
