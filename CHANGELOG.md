@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/thenativeweb/processenv/compare/3.0.4...3.0.5) (2021-05-10)
+
+
+### Bug Fixes
+
+* bump hosted-git-info from 2.8.8 to 2.8.9 ([#368](https://github.com/thenativeweb/processenv/issues/368)) ([4759fe7](https://github.com/thenativeweb/processenv/commit/4759fe748c69b4cce13592c90741c64eeb1c5102))
+
 ## [3.0.4](https://github.com/thenativeweb/processenv/compare/3.0.3...3.0.4) (2021-03-25)
 
 
