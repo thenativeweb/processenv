@@ -27,7 +27,7 @@
     "@types/uuid": "8.3.0",
     "assertthat": "6.2.0",
     "nodeenv": "3.0.56",
-    "roboter": "11.6.48",
+    "roboter": "11.7.1",
     "semantic-release-configuration": "2.0.1",
     "uuid": "8.3.2"
   },
