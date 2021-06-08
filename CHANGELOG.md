@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/thenativeweb/processenv/compare/3.0.5...3.0.6) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump glob-parent from 5.1.1 to 5.1.2 ([#385](https://github.com/thenativeweb/processenv/issues/385)) ([dd861aa](https://github.com/thenativeweb/processenv/commit/dd861aa4987e62ebd4cba07011195ed31426b94d))
+
 ## [3.0.5](https://github.com/thenativeweb/processenv/compare/3.0.4...3.0.5) (2021-05-10)
 
 
