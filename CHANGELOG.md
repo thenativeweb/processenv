@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/thenativeweb/processenv/compare/3.0.6...3.0.7) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump trim-newlines from 3.0.0 to 3.0.1 ([#384](https://github.com/thenativeweb/processenv/issues/384)) ([c3fdeef](https://github.com/thenativeweb/processenv/commit/c3fdeefaa6e4c5b2bb2338f9f347cf5264b7203a))
+
 ## [3.0.6](https://github.com/thenativeweb/processenv/compare/3.0.5...3.0.6) (2021-06-08)
 
 
