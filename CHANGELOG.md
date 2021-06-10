@@ -1,3 +1,10 @@
+## [3.0.8](https://github.com/thenativeweb/processenv/compare/3.0.7...3.0.8) (2021-06-10)
+
+
+### Bug Fixes
+
+* bump normalize-url from 6.0.0 to 6.0.1 ([#386](https://github.com/thenativeweb/processenv/issues/386)) ([09ea582](https://github.com/thenativeweb/processenv/commit/09ea582022a8587c7b8c3f6a53429ad5603a3ed6))
+
 ## [3.0.7](https://github.com/thenativeweb/processenv/compare/3.0.6...3.0.7) (2021-06-08)
 
 
