@@ -1,3 +1,10 @@
+## [3.0.9](https://github.com/thenativeweb/processenv/compare/3.0.8...3.0.9) (2021-08-16)
+
+
+### Bug Fixes
+
+* bump path-parse from 1.0.6 to 1.0.7 ([#408](https://github.com/thenativeweb/processenv/issues/408)) ([60584a3](https://github.com/thenativeweb/processenv/commit/60584a3e63bdd80174825073465d3f177883a59b))
+
 ## [3.0.8](https://github.com/thenativeweb/processenv/compare/3.0.7...3.0.8) (2021-06-10)
 
 
