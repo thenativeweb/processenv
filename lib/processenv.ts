@@ -7,7 +7,7 @@ function processenv (): Record<string, EnvironmentVariableValue>;
 function processenv (key: string, defaultValue: (() => Promise<EnvironmentVariableValue>)): Promise<EnvironmentVariableValue>;
 function processenv (key: string, defaultValue?: EnvironmentVariableValue | (() => EnvironmentVariableValue)): EnvironmentVariableValue;
 function processenv (key?: any, defaultValue?: any): any {
-  /* eslint-disable no-redeclare */
+  /* eslint-enable no-redeclare */
   if (!key) {
     const environmentVariables: NodeJS.ProcessEnv = {};
 
